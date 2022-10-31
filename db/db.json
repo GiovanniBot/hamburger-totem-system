@@ -1,0 +1,105 @@
+{
+  "ingredients": {
+    "breads": [
+      {
+        "id": 1,
+        "type": "White Italian"
+      },
+      {
+        "id": 2,
+        "type": "3 Cheeses"
+      },
+      {
+        "id": 3,
+        "type": "Parmesan and Oregano"
+      },
+      {
+        "id": 4,
+        "type": "Integral"
+      }
+    ],
+    "meats": [
+      {
+        "id": 1,
+        "type": "Titty"
+      },
+      {
+        "id": 2,
+        "type": "Rump"
+      },
+      {
+        "id": 3,
+        "type": "Rump Steak"
+      },
+      {
+        "id": 4,
+        "type": "Veggie burger"
+      }
+    ],
+    "optionals": [
+      {
+        "id": 1,
+        "type": "Bacon"
+      },
+      {
+        "id": 2,
+        "type": "Cheddar"
+      },
+      {
+        "id": 3,
+        "type": "Salami"
+      },
+      {
+        "id": 4,
+        "type": "Tomato"
+      },
+      {
+        "id": 4,
+        "type": "Purple Onion"
+      },
+      {
+        "id": 4,
+        "type": "Cocumber"
+      }
+    ]
+  },
+  "status": [
+    {
+      "id": 1,
+      "type": "Requested"
+    },
+    {
+      "id": 2,
+      "type": "In production"
+    },
+    {
+      "id": 3,
+      "type": "Done"
+    }
+  ],
+  "burgers": [
+    {
+      "name": "Gio AS",
+      "bread": "3 Cheeses",
+      "meat": "Veggie burger",
+      "optionals": [
+        "Bacon",
+        "Tomato"
+      ],
+      "status": "Requested",
+      "id": 1
+    },
+    {
+      "name": "Lais Cabeçuda",
+      "bread": "3 Cheeses",
+      "meat": "Rump Steak",
+      "optionals": [
+        "Bacon",
+        "Cheddar",
+        "Purple Onion"
+      ],
+      "status": "Requested",
+      "id": 2
+    }
+  ]
+}
