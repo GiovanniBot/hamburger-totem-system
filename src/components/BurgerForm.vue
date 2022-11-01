@@ -1,6 +1,5 @@
 <template>
     <div>
-        <Message :msg="msg" v-show="msg" />
         <div>
             <form id="burger-form" @submit.prevent="createBurger">
 
@@ -39,6 +38,7 @@
 
             </form>
         </div>
+        <Message :msg="msg" v-show="msg" />
     </div>
 </template>
 
@@ -48,7 +48,6 @@ import Message from './Message.vue'
 export default {
     name: 'BurgerForm',
     components: { Message },
-
     data() {
         return {
             breads: null,
@@ -62,7 +61,6 @@ export default {
             msg: null,
         }
     },
-
     methods: {
         async getIngredients() {
             const req = await fetch("http://localhost:3000/ingredients");
@@ -72,7 +70,6 @@ export default {
             this.meats = data.meats;
             this.optionalsData = data.optionals;
         },
-
         async createBurger() {
             const data = {
                 name: this.name,
@@ -83,7 +80,6 @@ export default {
             }
 
             const dataJson = JSON.stringify(data);
-
             const req = await fetch("http://localhost:3000/burgers", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -101,7 +97,6 @@ export default {
             this.optionals = '';
         },
     },
-
     mounted() {
         this.getIngredients();
     }
