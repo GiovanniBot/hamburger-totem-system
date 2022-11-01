@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="input-container optionals-container">
-                    <label id="optionals-title" for="optionals">Select the optionals: </label>
+                    <label id="optionals-title" for="optionals">Select the optionals:</label>
                     <div v-for="optional in optionalsData" :key="optional.id" class="checkbox-container">
                         <input type="checkbox" name="optionals" v-model="optionals" :value="optional.type">
                         <span>{{ optional.type }}</span>

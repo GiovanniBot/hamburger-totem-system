@@ -28,7 +28,7 @@
                                 {{ statu.type }}
                             </option>
                         </select>
-                        <button class="delete-btn">Cancel</button>
+                        <button class="delete-btn" @click="deleteRequest(burger.id)">Cancel</button>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,20 @@ export default {
             const data = await req.json();
 
             this.status = data;
-            console.log(data);
+        },
+        async deleteRequest(id) {
+            const req = await fetch(
+                `http://localhost:3000/burgers/${id}`, 
+                { method: 'DELETE' }
+            );
+
+            const res = await req.json();
+
+            //msg deleted request
+
+            this.getRequests(); //this call is making 2 more requests, TODO: just delete the dom node.
+
+
         }
     },
     mounted() {

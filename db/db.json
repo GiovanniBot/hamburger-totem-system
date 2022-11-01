@@ -90,13 +90,11 @@
       "id": 1
     },
     {
-      "name": "Lais Cabeçuda",
-      "bread": "3 Cheeses",
+      "name": "Sundae",
+      "bread": "Parmesan and Oregano",
       "meat": "Rump Steak",
       "optionals": [
-        "Bacon",
-        "Cheddar",
-        "Purple Onion"
+        "Bacon"
       ],
       "status": "Requested",
       "id": 2
