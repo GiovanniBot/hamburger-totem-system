@@ -23,27 +23,32 @@
                         </ul>
                     </div>
                     <div>
-                        <select name="status" class="status">
-                            <option v-for="statu in status" :key="statu.id" value="statu.type" :selected="burger.status === statu.type">
+                        <select name="status" class="status" @change="updateRequestProgressType($event, burger.id)">
+                            <option v-for="statu in status" :key="statu.id" :value="statu.type" :selected="burger.status === statu.type">
                                 {{ statu.type }}
                             </option>
                         </select>
                         <button class="delete-btn" @click="deleteRequest(burger.id)">Cancel</button>
                     </div>
                 </div>
+                <Message :msg="msg" v-show="msg" />
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import Message from './Message.vue'
+
 export default {
     name: 'Dashboard',
+    components: { Message },
     data() {
         return {
             burgers: null,
             burger_id: null,
             status: [],
+            msg: null,
         }
     },
     methods: {
@@ -54,25 +59,40 @@ export default {
 
             this.getStatus();
         },
+
         async getStatus() {
             const req = await fetch("http://localhost:3000/status");
             const data = await req.json();
 
             this.status = data;
         },
+
         async deleteRequest(id) {
             const req = await fetch(
                 `http://localhost:3000/burgers/${id}`, 
                 { method: 'DELETE' }
             );
 
-            const res = await req.json();
-
-            //msg deleted request
+            this.msg = `Order N˚${id} was removed!`;
+            setTimeout(() => this.msg = '', 6000);
 
             this.getRequests(); //this call is making 2 more requests, TODO: just delete the dom node.
+        },
 
+        async updateRequestProgressType(event, id) {
+            const option = event.target.value;
+            const dataJson = JSON.stringify({ status: option });
 
+            const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+                method: 'PATCH',
+                headers: { "Content-Type": "application/json" },
+                body: dataJson
+            });
+
+            const res = await req.json();
+
+            this.msg = `Order N˚${res.id} was updated to status: ${res.status}.`;
+            setTimeout(() => this.msg = '', 6000);
         }
     },
     mounted() {

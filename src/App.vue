@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       logo_src: '/img/logo-2.png',
-      app_name: 'Make Yout Burger',
+      app_name: 'Make Your Burger',
     }
   },
 }
@@ -33,6 +33,7 @@ export default {
   .main-container {
     margin: 50px;
     min-height: 250px;
+    height: 100vh;
   }
 
   h1 {

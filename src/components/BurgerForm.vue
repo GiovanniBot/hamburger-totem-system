@@ -1,8 +1,8 @@
 <template>
     <div>
+        <Message :msg="msg" v-show="msg" />
         <div>
-            <form id="burger-form" @submit.prevent="createBurger">
-
+            <form id="burger-form" @submit.prevent="createBurger">                
                 <div class="input-container">
                     <label for="name">Client's name: </label>
                     <input type="text" id="name" name="name" v-model="name" placeholder="Insert your name." autocomplete="off" required>
@@ -38,7 +38,6 @@
 
             </form>
         </div>
-        <Message :msg="msg" v-show="msg" />
     </div>
 </template>
 

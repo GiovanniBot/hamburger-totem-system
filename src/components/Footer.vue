@@ -8,7 +8,6 @@
 
 export default {
     name: 'Footer',
-
 }
 </script>
 
@@ -17,7 +16,7 @@ export default {
         width: 100%;
         height: 54px;
         background-color: #222;
-        border-top: solid 4px #111; 
+        border-top: solid 4px #111;
         color: #FCBA03;
         display: flex;
         justify-content: center;

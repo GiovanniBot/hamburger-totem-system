@@ -77,27 +77,5 @@
       "type": "Done"
     }
   ],
-  "burgers": [
-    {
-      "name": "Gio AS",
-      "bread": "3 Cheeses",
-      "meat": "Veggie burger",
-      "optionals": [
-        "Bacon",
-        "Tomato"
-      ],
-      "status": "Requested",
-      "id": 1
-    },
-    {
-      "name": "Sundae",
-      "bread": "Parmesan and Oregano",
-      "meat": "Rump Steak",
-      "optionals": [
-        "Bacon"
-      ],
-      "status": "Requested",
-      "id": 2
-    }
-  ]
+  "burgers": []
 }

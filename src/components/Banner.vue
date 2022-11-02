@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
     #main-banner {
-        background-image: url("/Users/giovanni/Documents/dev/vue/curso-hora-de-codar/3_make_your_burger/public/img/burger.jpg");
+        background-image: url('../../public/img/burger.jpg');
         background-position: 0 - 250px;
         background-size: cover;
         width: 100%;
